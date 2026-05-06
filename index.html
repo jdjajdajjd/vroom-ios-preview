@@ -1,109 +1,17 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>vroom — профиль ученика</title>
-  <style>
-    :root{
-      --bg:#000;
-      --card:#1c1c1e;
-      --card2:#2c2c2e;
-      --line:#38383a;
-      --text:#f5f5f7;
-      --muted:#8e8e93;
-      --muted2:#636366;
-      --white:#fff;
-      --red:#ff453a;
-      --green:#30d158;
-      --blue:#0a84ff;
-      --radius:28px;
-      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter","Segoe UI",sans-serif;
-      color-scheme:dark;
-    }
-    *{box-sizing:border-box}
-    body{margin:0;background:#050505;color:var(--text);font-family:inherit;letter-spacing:-.018em}
-    .page{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:28px}
-    .phone{width:min(430px,100%);height:min(920px,calc(100svh - 56px));background:var(--bg);border-radius:46px;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.08);position:relative}
-    .screen{height:100%;overflow:auto;padding:16px 20px 118px;scrollbar-width:none}.screen::-webkit-scrollbar{display:none}
-    .status{height:34px;display:flex;align-items:center;justify-content:space-between;padding:0 8px;color:#fff;font-size:15px;font-weight:590}.icons{display:flex;gap:6px;align-items:center;color:#fff}.battery{font-size:13px;padding:1px 5px;border-radius:5px;background:#2c2c2e;color:#ff453a}
-    h1{font-size:36px;line-height:1.05;margin:26px 0 14px;font-weight:720;letter-spacing:-.04em}.section{margin:14px 0 26px}.group{background:var(--card);border-radius:24px;overflow:hidden}.row{min-height:58px;display:flex;align-items:center;gap:14px;padding:0 16px;position:relative}.row+.row:before{content:"";position:absolute;left:64px;right:0;top:0;height:.5px;background:var(--line)}
-    .avatar{width:62px;height:62px;border-radius:18px;background:linear-gradient(145deg,#333,#111);display:grid;place-items:center;font-size:28px;color:#f5f5f7;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
-    .icon{width:32px;height:32px;border-radius:9px;background:#2c2c2e;display:grid;place-items:center;color:#d1d1d6;font-size:16px;flex:0 0 auto}.icon.soft{background:#242426}.main{flex:1;min-width:0}.title{font-size:17px;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.subtitle{font-size:14px;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.value{font-size:16px;color:var(--muted);margin-left:auto;white-space:nowrap}.chev{font-size:25px;line-height:1;color:#555;margin-left:2px;font-weight:300}.badge{min-width:24px;height:24px;border-radius:999px;background:var(--red);color:#fff;display:grid;place-items:center;font-size:14px;font-weight:600;padding:0 7px}.pill{height:26px;border-radius:999px;background:#2c2c2e;color:#d1d1d6;display:inline-flex;align-items:center;padding:0 10px;font-size:13px}.dot{width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block;margin-right:6px}.lesson{padding:18px 16px 16px}.lesson-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.label{font-size:13px;color:var(--muted);margin-bottom:5px}.time{font-size:30px;line-height:1.05;font-weight:650;letter-spacing:-.035em}.route{margin-top:14px;padding-top:14px;border-top:.5px solid var(--line);display:grid;gap:9px}.route-item{display:flex;align-items:center;gap:10px;color:#d1d1d6;font-size:15px}.small-icon{width:22px;height:22px;border-radius:7px;background:#2c2c2e;display:grid;place-items:center;color:#a1a1a6;font-size:12px}.progress{height:8px;border-radius:999px;background:#2c2c2e;overflow:hidden;margin-top:10px}.bar{height:100%;width:42%;background:#e5e5ea;border-radius:999px}.caption{padding:7px 16px 0;color:var(--muted2);font-size:13px;line-height:1.35}.bottom{position:absolute;left:0;right:0;bottom:0;padding:10px 18px 24px;background:rgba(0,0,0,.72);backdrop-filter:blur(24px) saturate(180%);border-top:.5px solid rgba(255,255,255,.08)}.tabs{height:58px;background:#1c1c1e;border-radius:22px;display:grid;grid-template-columns:repeat(4,1fr);align-items:center}.tab{display:grid;place-items:center;gap:3px;color:#8e8e93;font-size:11px}.tab.active{color:#fff}.tab span:first-child{font-size:18px}.handle{width:126px;height:5px;border-radius:999px;background:#fff;margin:14px auto 0;opacity:.26}
-    @media(max-width:520px){.page{padding:0;background:#000}.phone{height:100svh;width:100%;border-radius:0;box-shadow:none}.screen{padding-left:18px;padding-right:18px}h1{font-size:35px}}
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>vroom — светлый профиль</title>
+<style>
+:root{--bg:#f5f5f7;--card:#fff;--text:#1d1d1f;--muted:#6e6e73;--muted2:#8e8e93;--line:#d2d2d7;--line2:#e5e5ea;--soft:#f2f2f7;--green:#34c759;--red:#ff3b30;--blue:#007aff;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Inter","Segoe UI",sans-serif;color-scheme:light}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:inherit;letter-spacing:-.016em}.wrap{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:28px}.phone{width:min(430px,100%);height:min(920px,calc(100svh - 56px));background:var(--bg);border-radius:46px;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,.16),0 0 0 1px rgba(0,0,0,.05);position:relative}.screen{height:100%;overflow:auto;padding:14px 20px 118px;scrollbar-width:none}.screen::-webkit-scrollbar{display:none}.status{height:34px;display:flex;align-items:center;justify-content:space-between;padding:0 8px;font-size:15px;font-weight:590;color:#111}.icons{display:flex;align-items:center;gap:6px;color:#111}.battery{font-size:13px;border:1px solid #c7c7cc;border-radius:5px;padding:1px 5px;color:#555}h1{font-size:36px;line-height:1.06;margin:24px 0 14px;font-weight:700;letter-spacing:-.04em}.section{margin:14px 0 26px}.group{background:var(--card);border-radius:24px;overflow:hidden;border:.5px solid rgba(0,0,0,.05)}.row{min-height:58px;display:flex;align-items:center;gap:14px;padding:0 16px;position:relative}.row+.row:before{content:"";position:absolute;left:64px;right:0;top:0;height:.5px;background:var(--line2)}.avatar{width:62px;height:62px;border-radius:18px;background:#111;display:grid;place-items:center;color:#fff;font-size:26px;font-weight:500}.main{flex:1;min-width:0}.title{font-size:17px;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.name{font-size:18px;font-weight:500}.subtitle{font-size:14px;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.icon{width:32px;height:32px;border-radius:9px;background:var(--soft);display:grid;place-items:center;color:#6e6e73;font-size:15px;flex:0 0 auto}.value{font-size:16px;color:var(--muted);margin-left:auto;white-space:nowrap}.chev{font-size:25px;line-height:1;color:#c7c7cc;margin-left:2px;font-weight:300}.badge{min-width:24px;height:24px;border-radius:999px;background:var(--red);color:#fff;display:grid;place-items:center;font-size:14px;font-weight:600;padding:0 7px}.pill{height:26px;border-radius:999px;background:#eef9f0;color:#1b7f3a;display:inline-flex;align-items:center;padding:0 10px;font-size:13px;font-weight:500}.dot{width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;margin-right:6px}.lesson{padding:18px 16px 16px}.lesson-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.label{font-size:13px;color:var(--muted);margin-bottom:5px}.time{font-size:30px;line-height:1.05;font-weight:620;letter-spacing:-.035em}.route{margin-top:14px;padding-top:14px;border-top:.5px solid var(--line2);display:grid;gap:9px}.route-item{display:flex;align-items:center;gap:10px;color:#3a3a3c;font-size:15px}.small-icon{width:22px;height:22px;border-radius:7px;background:var(--soft);display:grid;place-items:center;color:var(--muted);font-size:12px}.progress{height:7px;border-radius:999px;background:var(--soft);overflow:hidden;margin-top:10px}.bar{height:100%;width:42%;background:#111;border-radius:999px}.caption{padding:7px 16px 0;color:var(--muted2);font-size:13px;line-height:1.35}.bottom{position:absolute;left:0;right:0;bottom:0;padding:10px 18px 24px;background:rgba(245,245,247,.78);backdrop-filter:blur(24px) saturate(180%);border-top:.5px solid rgba(0,0,0,.08)}.tabs{height:58px;background:rgba(255,255,255,.88);border:.5px solid rgba(0,0,0,.06);border-radius:22px;display:grid;grid-template-columns:repeat(4,1fr);align-items:center}.tab{display:grid;place-items:center;gap:3px;color:#8e8e93;font-size:11px}.tab.active{color:#111}.tab span:first-child{font-size:18px}.handle{width:126px;height:5px;border-radius:999px;background:#000;margin:14px auto 0;opacity:.16}.mutedbox{background:var(--soft);border-radius:18px;padding:14px 16px;color:#3a3a3c;font-size:15px;line-height:1.36}.primary{height:50px;width:100%;border:0;border-radius:16px;background:#111;color:#fff;font-size:17px;font-weight:500;margin-top:12px}.primary:active{transform:scale(.99)}@media(max-width:520px){.wrap{padding:0}.phone{height:100svh;width:100%;border-radius:0;box-shadow:none}.screen{padding-left:18px;padding-right:18px}}</style>
 </head>
-<body>
-  <main class="page">
-    <section class="phone" aria-label="Мок-профиль ученика vroom">
-      <div class="screen">
-        <div class="status"><span>16:39</span><div class="icons"><span>▮▮▮</span><span>⌁</span><span class="battery">14</span></div></div>
-        <h1>Профиль</h1>
-
-        <div class="section">
-          <div class="group">
-            <div class="row" style="min-height:92px">
-              <div class="avatar">В</div>
-              <div class="main">
-                <div class="title" style="font-size:18px;font-weight:500">Владислав</div>
-                <div class="subtitle">Автошкола «Вираж»</div>
-              </div>
-              <span class="chev">›</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="section">
-          <div class="group lesson">
-            <div class="lesson-top">
-              <div>
-                <div class="label">Ближайшее занятие</div>
-                <div class="time">Сегодня, 18:00</div>
-              </div>
-              <div class="pill"><span class="dot"></span>Подтверждено</div>
-            </div>
-            <div class="route">
-              <div class="route-item"><span class="small-icon">i</span><span>Мария Волкова · Toyota Corolla</span></div>
-              <div class="route-item"><span class="small-icon">⌖</span><span>ул. Ленина, 45</span></div>
-              <div class="route-item"><span class="small-icon">◷</span><span>Напомним за 2 часа</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="section">
-          <div class="group">
-            <div class="row"><div class="icon">⌁</div><div class="main"><div class="title">Мои занятия</div></div><div class="value">4 из 12</div><span class="chev">›</span></div>
-            <div class="row"><div class="icon">◷</div><div class="main"><div class="title">Записаться</div></div><div class="value">5 свободно</div><span class="chev">›</span></div>
-            <div class="row"><div class="icon">☰</div><div class="main"><div class="title">Документы</div></div><span class="badge">1</span><span class="chev">›</span></div>
-          </div>
-          <div class="caption">Основные действия всегда рядом: посмотреть занятие, записаться, проверить документы.</div>
-        </div>
-
-        <div class="section">
-          <div class="group">
-            <div class="row"><div class="icon soft">◉</div><div class="main"><div class="title">Прогресс обучения</div><div class="progress"><div class="bar"></div></div></div><div class="value">42%</div></div>
-            <div class="row"><div class="icon soft">◌</div><div class="main"><div class="title">Инструктор</div></div><div class="value">Мария</div><span class="chev">›</span></div>
-            <div class="row"><div class="icon soft">⌕</div><div class="main"><div class="title">Филиал</div></div><div class="value">Центр</div><span class="chev">›</span></div>
-          </div>
-        </div>
-
-        <div class="section">
-          <div class="group">
-            <div class="row"><div class="icon">◔</div><div class="main"><div class="title">Уведомления</div></div><div class="value">Вкл.</div><span class="chev">›</span></div>
-            <div class="row"><div class="icon">?</div><div class="main"><div class="title">Поддержка автошколы</div></div><span class="chev">›</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="bottom">
-        <div class="tabs">
-          <div class="tab active"><span>●</span><span>Профиль</span></div>
-          <div class="tab"><span>◷</span><span>Запись</span></div>
-          <div class="tab"><span>☰</span><span>Документы</span></div>
-          <div class="tab"><span>◌</span><span>Ещё</span></div>
-        </div>
-        <div class="handle"></div>
-      </div>
-    </section>
-  </main>
-</body>
-</html>
+<body><main class="wrap"><section class="phone" aria-label="Светлый мок-профиль vroom"><div class="screen"><div class="status"><span>16:39</span><div class="icons"><span>▮▮▮</span><span>⌁</span><span class="battery">100</span></div></div><h1>Профиль</h1>
+<div class="section"><div class="group"><div class="row" style="min-height:92px"><div class="avatar">В</div><div class="main"><div class="name">Владислав</div><div class="subtitle">Автошкола «Вираж»</div></div><span class="chev">›</span></div></div></div>
+<div class="section"><div class="group lesson"><div class="lesson-top"><div><div class="label">Ближайшее занятие</div><div class="time">Сегодня, 18:00</div></div><div class="pill"><span class="dot"></span>Подтверждено</div></div><div class="route"><div class="route-item"><span class="small-icon">i</span><span>Мария Волкова · Toyota Corolla</span></div><div class="route-item"><span class="small-icon">⌖</span><span>ул. Ленина, 45</span></div><div class="route-item"><span class="small-icon">◷</span><span>Напоминание за 2 часа</span></div></div><button class="primary">Открыть занятие</button></div></div>
+<div class="section"><div class="group"><div class="row"><div class="icon">⌁</div><div class="main"><div class="title">Мои занятия</div></div><div class="value">4 из 12</div><span class="chev">›</span></div><div class="row"><div class="icon">◷</div><div class="main"><div class="title">Записаться</div></div><div class="value">5 свободно</div><span class="chev">›</span></div><div class="row"><div class="icon">☰</div><div class="main"><div class="title">Документы</div></div><span class="badge">1</span><span class="chev">›</span></div></div><div class="caption">Основные действия без лишних экранов: занятие, запись, документы.</div></div>
+<div class="section"><div class="group"><div class="row"><div class="icon">◉</div><div class="main"><div class="title">Прогресс обучения</div><div class="progress"><div class="bar"></div></div></div><div class="value">42%</div></div><div class="row"><div class="icon">◌</div><div class="main"><div class="title">Инструктор</div></div><div class="value">Мария</div><span class="chev">›</span></div><div class="row"><div class="icon">⌕</div><div class="main"><div class="title">Филиал</div></div><div class="value">Центр</div><span class="chev">›</span></div></div></div>
+<div class="section"><div class="mutedbox">vroom остаётся нейтральной системой. Цвет автошколы можно добавить только точечно: логотип, кнопка, активный статус.</div></div>
+<div class="section"><div class="group"><div class="row"><div class="icon">◔</div><div class="main"><div class="title">Уведомления</div></div><div class="value">Вкл.</div><span class="chev">›</span></div><div class="row"><div class="icon">?</div><div class="main"><div class="title">Поддержка автошколы</div></div><span class="chev">›</span></div></div></div>
+</div><div class="bottom"><div class="tabs"><div class="tab active"><span>●</span><span>Профиль</span></div><div class="tab"><span>◷</span><span>Запись</span></div><div class="tab"><span>☰</span><span>Документы</span></div><div class="tab"><span>◌</span><span>Ещё</span></div></div><div class="handle"></div></div></section></main></body></html>
